@@ -1,0 +1,10 @@
+# --- C++ Deploy Part ---
+deploy/.idea/
+deploy/cmake-build-debug/
+deploy/cmake-build-release/
+
+# --- Python Train Part ---
+train/.idea/
+train/.venv/
+train/__pycache__/
+train/*.pyc
