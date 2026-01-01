@@ -8,3 +8,7 @@ train/.idea/
 train/.venv/
 train/__pycache__/
 train/*.pyc
+train/runs/
+train/uv.lock
+
+train/**/*.pt
