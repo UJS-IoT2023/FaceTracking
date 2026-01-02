@@ -134,10 +134,7 @@ public:
 };
 
 int main() {
-    // Required for Windows stability
-    _putenv("XNNPACK_DISABLE=1");
-
-    YoloDetector detector("C:/Dev/workspace/FaceTracking/deploy/cmake-build-debug/best.torchscript");
+    YoloDetector detector("/home/cacc/Workspace/FaceTracking/model/best.torchscript");
 
     cv::VideoCapture cap(0);
     if (!cap.isOpened()) {
