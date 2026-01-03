@@ -1,9 +1,11 @@
-//
-// Created by cacc on 1/3/26.
-//
-
-#ifndef FACE_DETECTOR_H
-#define FACE_DETECTOR_H
+/**
+ * include/detector.h
+ * FaceDetector class
+ * @version 1.0 2026-01-03
+ * @author cacc
+ */
+#ifndef DETECTOR_H
+#define DETECTOR_H
 
 #include <iostream>
 #include <vector>
@@ -16,10 +18,9 @@ struct DetectionBox {
     float score;
 };
 
-class FaceDetector {
-
+class Detector {
 public:
-    explicit FaceDetector(const std::string& model_path);
+    explicit Detector(const std::string& model_path);
     std::vector<DetectionBox> inference(cv::Mat& frame);
 
 private:

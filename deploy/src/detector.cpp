@@ -1,12 +1,13 @@
-//
-// Created by cacc on 1/3/26.
-//
-
-#include "face_detector.h"
+/**
+ * src/face_detector.cpp
+ * @version 1.0 2026-01-03
+ * @author cacc
+ */
+#include "detector.h"
 #include <fstream>
 #include <torch/cuda.h>
 
-FaceDetector::FaceDetector(const std::string &model_path) {
+Detector::Detector(const std::string &model_path) {
     try {
         if (torch::cuda::is_available()) {
             std::cout << "CUDA is available! Using GPU: " << torch::cuda::device_count() << std::endl;
@@ -34,7 +35,7 @@ FaceDetector::FaceDetector(const std::string &model_path) {
     }
 }
 
-std::vector<DetectionBox> FaceDetector::inference(cv::Mat &frame) {
+std::vector<DetectionBox> Detector::inference(cv::Mat &frame) {
     if (frame.empty()) return {};
 
     // 1. Pre-processing (CPU)
