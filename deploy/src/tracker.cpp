@@ -1,6 +1,7 @@
 /**
  * src/tracker.cpp
  * @version 1.0 2026-01-03
+ * @author cacc
  */
 #include "tracker.h"
 
@@ -44,9 +45,9 @@ void SharedTrack::update(DetectionBox detection_box) {
 SortTracker::SortTracker(int max_age, float iou_threshold)
     : max_age(max_age), iou_threshold(iou_threshold) {}
 
-double SortTracker::get_iou(cv::Rect r1, cv::Rect r2) {
-    int interArea = (r1 & r2).area();
-    int unionArea = r1.area() + r2.area() - interArea;
+double SortTracker::get_iou(cv::Rect rect1, cv::Rect rect2) {
+    int interArea = (rect1 & rect2).area();
+    int unionArea = rect1.area() + rect2.area() - interArea;
     if (unionArea <= 0) return 0;
     return static_cast<double>(interArea) / unionArea;
 }

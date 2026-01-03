@@ -8,7 +8,7 @@
 #include "tracker.h"
 
 const std::string MODEL_PATH = "/home/cacc/Workspace/FaceTracking/model/best.torchscript";
-const int MAX_AGE = 30;
+const int MAX_AGE = 15;
 const float IOU_THRESHOLD = 0.3;
 
 int main() {
